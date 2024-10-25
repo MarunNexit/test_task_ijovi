@@ -1,0 +1,371 @@
+.circle {
+
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+
+    display: grid;
+    place-items: center;
+
+    .container {
+        width: 300px;
+        height: 250px;
+        position: relative;
+        overflow: hidden;
+        background: black;
+    }
+
+    .basic_information, .company_details, .scroll_frame,
+    ._ring,
+    ._black_circle,
+    ._shadow {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    ._ring,
+    ._black_circle,
+    ._shadow {
+        aspect-ratio: 1 / 1;
+        border-radius: 50%;
+    }
+
+
+    .ring_block{
+        animation-name: moveUp, fadeOut;
+        animation-duration: 0.3s, 0.5s;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: 1, 1;
+        animation-delay: 4s, 8.2s;
+        animation-fill-mode: forwards;
+
+        width: 100%;
+        height: 100%;
+    }
+
+    ._ring,
+    ._shadow {
+        width: 240px;
+        animation-name: rotate;
+        animation-duration: 10s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+    }
+
+    ._ring {
+        background: rgb(213, 187, 247);
+        background: linear-gradient(
+                142deg,
+                rgba(213, 187, 247, 1) 0%,
+                rgba(119, 0, 244, 1) 100%
+        );
+        animation-direction: reverse;
+    }
+
+    ._black_circle {
+        width: 235px;
+        background: rgb(0, 0, 0);
+    }
+
+    ._shadow {
+        background-color: rgba(119, 0, 244, 1);
+        filter: blur(30px);
+        transform-origin: 65% 50%;
+    }
+
+
+    .logo,
+    .word,
+    .company_overview,
+    .logo_big,
+    .button_click,
+    .button_icon,
+    .button_contact_us
+    {
+        background: url('sprite.png') no-repeat;
+        background-size: 250px 318px;
+    }
+
+
+
+    .basic_information, .company_details {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 235px;
+    }
+
+
+    .basic_information{
+        opacity: 1;
+        animation: fadeOut 0.3s ease-in-out forwards;
+        animation-delay: 4s;
+        gap: 15px;
+
+
+        .logo {
+            width: 60px;
+            height: 35px;
+            background-position: -105px -10px;
+            background-size: 250px 318px;
+        }
+
+        .company_description {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            .text_company_description_top,
+            .text_company_description_mid,
+            .text_company_description_bottom {
+                display: flex;
+                height: 20px;
+            }
+
+            .word {
+                width: 40px;
+                opacity: 0;
+                animation: fadeIn 0.4s ease-in-out forwards;
+            }
+
+            .text_company_description_top .word:nth-child(1) {
+                width: 40px;
+                background-position: -0px -55px;
+                animation-delay: 0s;
+            }
+
+            .text_company_description_top .word:nth-child(2) {
+                width: 19px;
+                background-position: -40px -55px;
+                animation-delay: 0.15s;
+            }
+
+            .text_company_description_top .word:nth-child(3) {
+                width: 44px;
+                background-position: -59px -55px;
+                animation-delay: 0.30s;
+            }
+
+            .text_company_description_top .word:nth-child(4) {
+                width: 58px;
+                background-position: -103px -55px;
+                animation-delay: 0.45s;
+            }
+
+            .text_company_description_mid .word:nth-child(1) {
+                width: 76px;
+                background-position: -0px -75px;
+                animation-delay: 0.60s;
+            }
+
+            .text_company_description_mid .word:nth-child(2) {
+                width: 90px;
+                background-position: -76px -75px;
+                animation-delay: 0.75s;
+            }
+
+            .text_company_description_mid .word:nth-child(3) {
+                width: 19px;
+                background-position: -166px -75px;
+                animation-delay: 0.90s;
+            }
+
+            .text_company_description_bottom .word:nth-child(1) {
+                width: 117px;
+                background-position: -0px -95px;
+                animation-delay: 1.05s;
+            }
+
+            .text_company_description_bottom .word:nth-child(2) {
+                width: 68px;
+                background-position: -117px -95px;
+                animation-delay: 1.20s;
+            }
+        }
+
+        .button_block {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+
+            opacity: 0;
+            animation: fadeIn 0.5s ease-in-out forwards;
+            animation-delay: 1.7s;
+
+            .button_click {
+                height: 38px;
+                width: 162px;
+                background-position: -0px -228px;
+            }
+
+            .button_icon {
+                height: 25px;
+                width: 25px;
+                background-position: -170px -235px;
+            }
+        }
+    }
+
+
+
+    .company_details{
+        gap: 60px;
+        animation: fadeOut 0.5s ease forwards;
+        animation-delay: 8.2s;
+
+        .logo_big {
+            opacity: 0;
+            animation: fadeIn 0.3s ease-in-out forwards;
+            animation-delay: 4s;
+
+            width: 85px;
+            height: 50px;
+            background-position: -0px -5px;
+        }
+
+        .company_overview{
+            opacity: 0;
+
+            animation: fadeIn 0.7s ease-in-out forwards;
+            animation-delay: 4s;
+
+            height: 20px;
+            width: 250px;
+        }
+
+        .company_overview:nth-child(1){
+            background-position: -0px -120px;
+        }
+        .company_overview:nth-child(2){
+            background-position: -0px -140px;
+        }
+        .company_overview:nth-child(3){
+            background-position: -0px -160px;
+        }
+        .company_overview:nth-child(4){
+            background-position: -0px -180px;
+        }
+        .company_overview:nth-child(5){
+            background-position: -0px -200px;
+        }
+    }
+
+
+    .scroll_frame {
+        opacity: 0;
+        animation: fadeIn 0.5s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+        animation-delay: 8.5s;
+
+        width: 100%;
+        height: 100%;
+    }
+
+
+    .scroll_frame_block{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: auto;
+
+        animation: scrollDown 16s linear forwards;
+        animation-delay: 11s;
+    }
+
+
+    .scroll_frame_image{
+        width: 100%;
+        height: auto;
+        position: relative;
+        border: 0;
+    }
+
+
+    .button_contact_us{
+        position: relative;
+        bottom: 0;
+        left: 20px;
+
+        background-image: url(sprite.png);
+        background-position: -0px -268px;
+        background-repeat: no-repeat;
+        background-size: 250px 318px;
+
+        width: 160px;
+        height: 50px;
+
+        transform: translateY(-172%);
+    }
+}
+
+
+
+@keyframes rotate {
+    0% {
+        transform: translate(-50%, -50%) rotate(0);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+
+
+
+@keyframes slideIn {
+    0% {
+        clip-path: inset(0 100% 0 0);
+    }
+    100% {
+        clip-path: inset(0 0 0 0);
+    }
+}
+
+
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+
+@keyframes moveUp {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-65%);
+    }
+}
+
+
+@keyframes scrollDown {
+    0% {
+        top: 0;
+    }
+    100% {
+        top: calc(100% - 1204px); /* Зображення прокручується повністю вниз */
+    }
+}
